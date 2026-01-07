@@ -1,0 +1,129 @@
+
+.page2 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+
+.down {
+  position: relative;
+  overflow: hidden;
+}
+
+.down > #men,
+.down > #women {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.down > #men {
+  left: 0%;
+}
+
+.down > #women {
+  left: 110%;
+}
+
+
+.page2>.category {
+    height: 80%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.category>.section {
+    height: 90%;
+    width: 80%;
+    position: relative;
+    transition: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.section>.top {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+
+.section>.down {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.down>#men {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#men>.row1 {
+    height: 80%;
+    width: 24%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: black;
+   border: 1px solid #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.row1>img {
+    height: 50%;
+    width: 70%;
+    border-radius: 50%;
+}
+
+.down>#women {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#women>.row1 {
+    height: 80%;
+    width: 24%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color:black ;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.row1>img {
+    height: 50%;
+    width: 70%;
+    border-radius: 50%;
+}

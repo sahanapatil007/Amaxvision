@@ -1,0 +1,65 @@
+.page4 {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 0;
+}
+.Why{
+  color: wheat;
+  margin-bottom: 30px;
+  font-size: 38px;
+}
+.about {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.215);
+  gap: 50px;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.215);
+}
+
+.about-content {
+  flex: 1.1;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #fff;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    height: 320px;
+  }
+
+  .about-content {
+    font-size: 17px;
+  }
+}
+
+
+
+

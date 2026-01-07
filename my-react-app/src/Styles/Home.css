@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+.image-cont {
+    height: 100vh;
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    z-index: -10;
+   
+}
+
+.image-cont>.image-cont2 {
+    height: 80%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+.image-cont2>.image-row {
+    height: 100%;
+    width: 30%;
+    margin: 8px;
+    border-radius: 6px;
+}
+
+.image-cont2>.image-row1 {
+    height: 100%;
+    width: 30%;
+    margin: 8px;
+    border-radius: 6px;
+}
+
+.image-cont2>.image-row2 {
+    height: 100%;
+    width: 30%;
+    margin: 8px;
+    border-radius: 6px;
+}
+
+.image-row>.img1 {
+    height: 40%;
+    width: 100%;
+    margin: 8px;
+    border-radius: 6px;
+    background-color: #021027;
+    overflow-y: hidden;
+}
+
+.image-row>.img2 {
+    height: 60%;
+    width: 100%;
+    margin: 8px;
+    border-radius: 6px;
+    background-color: #021027;
+}
+
+.image-row1>.img3 {
+    height: 50%;
+    width: 100%;
+    margin: 8px;
+    border-radius: 6px;
+    background-color: #021027;
+}
+
+.image-row1>.img4 {
+    height: 50%;
+    width: 100%;
+    margin: 8px;
+    border-radius: 6px;
+    background-color: #021027;
+}
+
+.image-row2>.img5 {
+    height: 45%;
+    width: 100%;
+    margin: 8px;
+    border-radius: 6px;
+    background-color: #021027;
+}
+
+.image-row2>.img6 {
+    height: 55%;
+    width: 100%;
+    margin: 8px;
+    border-radius: 6px;
+    background-color: #021027;
+}
+
+.img6>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-position: center;
+}
+
+.img1>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-position: center;
+}
+
+.img2>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-position: center;
+}
+
+.img3>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-position: center;
+}
+
+.img4>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-position: center;
+}
+
+.img5>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-position: center;
+}
+
+/*---------------------------------- page2----------------------------*/
+
+
+
