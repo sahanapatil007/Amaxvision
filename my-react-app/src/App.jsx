@@ -6,14 +6,18 @@ import Nav from './Components/Nav';
 import Home from './Components/Home';
 import Category from './Components/Category';
 import Product from './Products/Product';
+import Footer from './Components/Footer';
+import Productlist from './Products/Productlist';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
       <div>
-       
+       <Nav/>
        <Product />
+       <Productlist/>
+       <Footer/>
     </div>
   )
 }

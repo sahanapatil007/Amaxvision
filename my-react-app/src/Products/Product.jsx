@@ -3,6 +3,9 @@ import Slider from "react-slick";
 import "../Styles/Product.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import img1 from '../assets/image1.jpeg';
+import img2 from '../assets/image2.jpeg';
+import img3 from '../assets/image3.jpeg';
 
 function Product() {
   const settings = {
@@ -21,19 +24,19 @@ function Product() {
       <Slider {...settings}>
         <div>
           <img
-            src="https://images.unsplash.com/photo-1589176449149-71f7ea77ec25"
+            src={img1}
             alt="spex 1"
           />
         </div>
         <div>
           <img
-            src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6"
+            src={img2}
             alt="spex 2"
           />
         </div>
         <div>
           <img
-            src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f"
+            src={img3}
             alt="spex 3"
           />
         </div>
