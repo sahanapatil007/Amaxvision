@@ -11,7 +11,7 @@ function Size() {
                         <div className="image1"><img
                             src="https://d3995ea24pmi7m.cloudfront.net/media/catalog/product/T/F/TF1121WFM1V_1_lar.jpg" /><button
                                 type="button">Cat Eye</button></div>
-                        <div className="image1"><img
+                        <div className="image1" id="image2"><img
                             src="https://d3995ea24pmi7m.cloudfront.net/media/catalog/product/T/A/TA00119UFA2MBRV_1_lar.jpg"
                             alt="" /><button type="button">Rectangle</button></div>
                         <div className="image1"><img

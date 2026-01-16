@@ -39,7 +39,14 @@
     flex-direction: column;
 
 }
-
+.category h2{
+    color: antiquewhite;
+    font-size: 28px;
+}
+p{
+    color: #fff;
+    font-size: 23px;
+}
 .category>.section {
     height: 90%;
     width: 80%;
@@ -59,9 +66,13 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
+    cursor: pointer;
 }
 
-
+.row1 h4{
+    font-size: 23px;
+    color: #fff;
+}
 
 .section>.down {
     height: 80%;
@@ -126,4 +137,7 @@
     height: 50%;
     width: 70%;
     border-radius: 50%;
+}
+.row1 h4{
+    color: #fff;
 }

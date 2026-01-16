@@ -37,12 +37,10 @@ nav {
     color: #fff;
     font-family: "Poppins", sans-serif;
     opacity: 0.85;
+    padding: 0.2rem;
 }
 a:hover{
-    color: black;
-    padding: 0.2rem;
-    border-radius: 8%;
-    background-color:#7C4DFF;
+    border-bottom: 3px solid #7C4DFF;
 }
 .nav>.down {
     height: 8vh;

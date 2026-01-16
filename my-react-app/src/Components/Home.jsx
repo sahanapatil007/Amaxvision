@@ -7,6 +7,7 @@ import '../Styles/Category.css';
 import Size from "./Size";
 import About from "./About";
 import Footer from "./Footer";
+import Review from "./Review";
 function Home() {
     return (
         <div>
@@ -42,6 +43,7 @@ function Home() {
             <Category />
             <Size />
              <About />
+             <Review />
              <Footer />
             </div>
         );

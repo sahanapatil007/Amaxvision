@@ -8,7 +8,7 @@ function Footer() {
     <div className="up">
         <div className="links">
           <h2>AmaxVision</h2>
-          <h3><a href="">My Account</a></h3>
+          <h3><a href="">My Account </a></h3>
           <h3><a href="">About MaxVision</a></h3>
           <h3><a href="">Eyeglasses</a></h3>
           <h3><a href="">Contactlens</a></h3>
@@ -19,7 +19,7 @@ function Footer() {
           <div className="contact-1">
            <h4> <i className="ri-instagram-line" style={{ fontSize: "35px", marginRight: "5px" }} ></i>maxvision@insta</h4>
             <h4><i className="ri-whatsapp-fill" style={{ fontSize: "35px", marginRight: "5px" }} ></i>1234567890</h4>
-            <h4><i className="ri-mail-line" style={{ fontSize: "35px", marginRight: "5px" }} ></i>Amaxvision</h4>
+            <h4><i className="ri-mail-line" style={{ fontSize: "35px", marginRight: "5px" }} ></i>+9112345678</h4>
           </div>
           
         </div>

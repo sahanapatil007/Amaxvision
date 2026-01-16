@@ -5,7 +5,7 @@ footer {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-   
+
 }
 
 footer>.up {
@@ -25,7 +25,18 @@ footer>.up {
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
- 
+}
+.links h2{
+     background: linear-gradient(135deg, #00E5FF, #7C4DFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #E6F6FF;
+}
+
+.links a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .up>.contact {
@@ -34,7 +45,8 @@ footer>.up {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 20px;
     color: #fff;
 }
 
@@ -43,9 +55,15 @@ footer>.up {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     font-size: 23px;
-    gap: 20px;
+    gap: 30px;
+}
+
+.contact h2 {
+    font-size: 30px;
+    text-align: center;
+    width: 80%;
 }
 
 footer>.down-foot {
@@ -55,10 +73,4 @@ footer>.down-foot {
     background-color: rgba(240, 248, 255, 0.612);
     text-align: center;
     font-size: 25px;
-}
-
-.Para {
-    background-color: 'gray';
-    height: '90%';
-    width: '3px';
 }
