@@ -8,16 +8,14 @@ import Category from './Components/Category';
 import Product from './Products/Product';
 import Footer from './Components/Footer';
 import Productlist from './Products/Productlist';
+import Subcat from './Products/Subcat';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
       <div>
-       <Nav/>
-       <Product />
-       <Productlist/>
-       <Footer/>
+      <Subcat/>
     </div>
   )
 }

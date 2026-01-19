@@ -1,0 +1,99 @@
+.subcat {
+  height: 150vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+}
+
+.left {
+  height: 100%;
+  width: 30%;
+  background-color: black;
+  color: #fff;
+}
+
+.right {
+  height: 100%;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.subsection {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: capitalize;
+}
+
+.downsec {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.downsec>.Products {
+  height: 87%;
+  width: 30%;
+  background: black;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.273);
+}
+
+.Products>.Productimg {
+  height: 80%;
+  width: 100%;
+}
+
+.Productimg>img {
+  height: 80%;
+  width: 90%;
+  border: 3px solid #fff;
+  padding: 2%;
+  margin: 5%;
+}
+
+.Productimg>hr {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.Products>.productdetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.productdetails>.buy-sec {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.productdetails>a:hover {
+  border-bottom: 3px solid gray;
+}
+
+.productdetails>a,
+h3,
+h5 {
+  color: #fff;
+}
