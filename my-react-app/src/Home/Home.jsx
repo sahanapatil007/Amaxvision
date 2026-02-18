@@ -11,7 +11,7 @@ import Review from "./Review";
 function Home() {
     return (
         <div>
-            <Nav/>
+           
             <div className="image-cont">
                 <div className="image-cont2">
                     <div className="image-row">
@@ -44,7 +44,7 @@ function Home() {
             <Size />
              <About />
              <Review />
-             <Footer />
+            
             </div>
         );
         };

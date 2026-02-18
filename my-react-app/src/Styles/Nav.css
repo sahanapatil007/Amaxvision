@@ -21,6 +21,7 @@ nav {
 .top>.right {
     height: 90%;
     width: 10%;
+    
 }
 
 .top>.left {
@@ -29,6 +30,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    background-color: #021027;
 }
 
 .left>a {

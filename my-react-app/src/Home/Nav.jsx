@@ -1,6 +1,7 @@
 import React from "react";
 import 'remixicon/fonts/remixicon.css';
 import '../Styles/Nav.css';
+import {Link} from 'react-router-dom'
 
 function Nav() {
     return (
@@ -11,7 +12,8 @@ function Nav() {
                         <span className="vision" >AMaxVision</span>
                     </div>
                     <div className="left">
-                        <a href="/">Eyeglasses</a>
+                        < Link to={'/'}>Home</Link>
+                         < Link to={'/Product'}>Eyeglasses</Link>
                         <a href="/">Contactlenses</a>
                         <a href="/">Eyetest</a>
                         <a href="/">Why Us</a>

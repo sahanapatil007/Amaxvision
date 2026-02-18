@@ -12,12 +12,28 @@
   height: 100%;
   width: 30%;
   background-color: black;
+  position: relative;
+  color: #fff;
+  
+}
+.left .framesize{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+.framesize > select{
+  height: 5%;
+  width: 90%;
+  border-radius: 10px;
+  background-color: black;
   color: #fff;
 }
-
 .right {
   height: 100%;
-  width: auto;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,33 +62,32 @@
 }
 
 .downsec>.Products {
-  height: 87%;
-  width: 30%;
+  height: 90%;
+  width: 40%;
   background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   border: 3px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.273);
 }
 
 .Products>.Productimg {
-  height: 80%;
+  height: 70%;
   width: 100%;
 }
 
 .Productimg>img {
-  height: 80%;
+  height: 90%;
   width: 90%;
-  border: 3px solid #fff;
-  padding: 2%;
+  border: 1px solid #fff;
   margin: 5%;
 }
-
-.Productimg>hr {
-  width: 80%;
-  margin-left: 10%;
-}
-
 .Products>.productdetails {
+  height: 28%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,13 +102,21 @@
   gap: 20px;
   flex-direction: row;
 }
-
-.productdetails>a:hover {
-  border-bottom: 3px solid gray;
-}
-
-.productdetails>a,
-h3,
-h5 {
+.productdetails 
+h3{
+  font-size: 26px;
   color: #fff;
+}
+.productdetails 
+h5{
+  font-size: 20px;
+  color: #fff;
+}
+.productdetails button{
+ background-color: black;
+ color: #fff;
+ border: none;
+}
+.productdetails button:hover{
+  border-bottom: 2px solid slateblue;
 }
