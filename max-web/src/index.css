@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+.didone-font {
+    font-family: "Bodoni Moda", serif;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: "Bodoni Moda", serif;
+}
+
+.fantasy {
+    font-family: fantasy;
+}
+
+@layer utilities {
+    .animate {
+        animation-fill-mode: both;
+    }
+
+    .slide-in-top {
+        animation-name: slidefromtop;
+    }
+
+    .slide-in-from-bottom {
+        animation-name: slide-in-from-bottom;
+    }
+
+    .duration {
+        animation-duration: 300ms;
+    }
+
+    .duration-200 {
+        animation-duration: 200ms;
+    }
+
+    .duration-700 {
+        animation-duration: 700ms;
+    }
+
+    .delay-100 {
+        animation-delay: 100ms;
+    }
+
+    .delay-200 {
+        animation-delay: 200ms;
+    }
+
+    .delay-300 {
+        animation-delay: 300ms;
+    }
+
+    @keyframes slidefromtop {
+        from {
+            opacity: 0;
+            transform: translateY(-1rem);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slide-in-from-bottom {
+        from {
+            opacity: 0;
+            transform: translateY(1rem);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .animate-scroll {
+        display: inline-block;
+        animation: scroll 10s linear infinite;
+    }
+}
