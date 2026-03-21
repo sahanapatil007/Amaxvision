@@ -13,6 +13,10 @@ exp.use('/api' ,route)
 
 mongoose.connect(process.env.MONGO_URI).then(()=> console.log("connected"))
 
+exp.get("/", (req, res) => {
+  res.send("Server is running 🚀");
+});
+
 exp.get("/product",async (req , res)=>{
     const product = await Product.find();
     res.json(product);
