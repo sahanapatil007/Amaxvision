@@ -7,7 +7,9 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const exp = express();
-exp.use(cors());
+exp.use(cors({
+  origin: "*"
+}));
 exp.use(express.json());
 exp.use('/api' ,route)
 
@@ -32,10 +34,7 @@ exp.post("/addProducts", async (req, res) => {
   }
 });
 
-const PORT =  process.env.PORT || 3000;
-exp.listen(PORT,()=>{
-    console.log("the server runing")
-})
+
 
 
 

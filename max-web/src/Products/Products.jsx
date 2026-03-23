@@ -1,47 +1,68 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios"
+import Footer from '../Home/Footer';
 
 function Products() {
 
   const [prod, setproduct] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const location = useLocation();
   const gender = location.state?.gender;
   const material = location.state?.material;
 
-useEffect(() => {
-  axios.get("http://localhost:3000/product")
-    .then((res) => {
-      let data = res.data;
-      if (gender) {
-        data = data.filter(item => item.gender == gender );
+  const [mainImg, setMainImg] = useState({});
+  const [buy, setbuy] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get("https://amaxvision.onrender.com/product");
+
+        let data = Array.isArray(res.data) ? res.data : [];
+
+        if (gender) {
+          data = data.filter(
+            item => item.gender?.toLowerCase() === gender.toLowerCase()
+          );
+        }
+        
+       
+        console.log("before filter:", res.data);
+        setproduct(data);
+        setAllProducts(data);
+        setLoading(false);
+
+      } catch (error) {
+        console.log(error);
       }
-      if ( material) {
-        data = data.filter(item =>  item.material == material  );
-      }  
-      console.log(gender)
-      setproduct(data);
-      setAllProducts(data);
-    })
-    .catch(error => console.log(error));
-}, [gender, material]);
+    };
 
-  function price100(pric) {
-    let result;
+    fetchData();
+  }, [gender, material]);
 
-    if (pric == 1500) {
-      result = allProducts.filter(item => item.price <= 1300);
-    } else if (pric == 2500) {
-      result = allProducts.filter(item => item.price <= 1400);
-    } else {
-      result = allProducts.filter(item => item.price <= 1500);
-    }
+ function price100(range) {
+  let result = [];
 
-    setproduct(result);
+  if (range === 1000) {
+    result = allProducts.filter(item => item.price <= 1000);
+  } else if (range === 2000) {
+    result = allProducts.filter(item =>
+      item.price > 1000 && item.price <= 1400
+    );
+  } else if (range === 3000) {
+    result = allProducts.filter(item =>
+      item.price > 2000 && item.price <= 3000
+    );
   }
 
-  const [mainImg, setMainImg] = useState({});
+  console.log("Filtered:", result); 
+
+  setproduct(result);
+}
 
   function mainimg(id, img) {
     setMainImg(prev => ({
@@ -50,12 +71,12 @@ useEffect(() => {
     }))
   }
 
-  const [buy, setbuy] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
   function selected(product) {
     setSelectedProduct(product)
   }
+
+  if (loading) return <h1>Loading...</h1>;
+  if (!prod.length) return <h1>No products found</h1>;
 
 
   return (
@@ -68,9 +89,9 @@ useEffect(() => {
           </Link>
           <div className='absolute left-0 top-full hidden group-hover:block bg-amber-50 w-70 shadow-lg rounded-md'>
             <ul className='flex flex-col'>
-              <li className='p-2 hover:bg-gray-200 cursor-pointer ' onClick={() => price100(1500)}>0 - 1000</li>
-              <li className='p-2 hover:bg-gray-200 cursor-pointer' onClick={() => price100(2500)}>1000 - 2000</li>
-              <li className='p-2 hover:bg-gray-200 cursor-pointer' onClick={() => price100(3500)}>2000 - 3000</li>
+              <li className='p-2 hover:bg-gray-200 cursor-pointer ' onClick={() => price100(2000)}>0 - 1000</li>
+              <li className='p-2 hover:bg-gray-200 cursor-pointer' >1000 - 2000</li>
+              <li className='p-2 hover:bg-gray-200 cursor-pointer' >2000 - 3000</li>
             </ul>
           </div>
         </div>
@@ -111,7 +132,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
-      <div className='h-screen w-full relative'>
+      <div className=' w-full relative mb-20'>
         <div className='grid grid-cols-4 gap-6 p-2 relative '>
           {prod.map((item) => {
             return (
@@ -119,18 +140,18 @@ useEffect(() => {
                 <div className='h-[60%] w-full bg-white flex space-x-5'>
                   <div className='h-[95%] w-[70%]  '>
                     <img
-                      src={mainImg[item._id] ? mainImg[item._id] : item.image}
+                      src={mainImg[item._id] || item.image || "https://via.placeholder.com/150"}
                       className='h-full w-full object-fill'
                     />
                   </div>
                   <div className='h-full w-[25%] flex flex-col space-y-1'>
-                    {item.subimage.map((img1) => {
+                    {item.subimage?.map((img1) => {
                       return (
                         <img
                           key={img1}
                           src={img1}
                           onClick={() => mainimg(item._id, img1)}
-                          className='h-22 w-25 '
+                          className='h-22 w-25'
                         />
                       )
                     })}
@@ -154,27 +175,14 @@ useEffect(() => {
             )
           })}
         </div>
-        {buy && (
-          <div className="fixed top-18 right-0 h-[90vh] w-[50%] bg-white shadow-2xl  p-5">
-
-            <h2 className="text-2xl font-bold">
-              {selectedProduct?.name}
-            </h2>
-            <img
-              src={selectedProduct?.image}
-              className="w-full h-60 object-contain"
-            />
-            <h3 className="text-xl mt-3">
-              ${selectedProduct?.price}
-            </h3>
-            <button
-              onClick={() => setbuy(false)}
-              className="mt-4 bg-red-500 text-white px-4 py-2">Close</button>
-
-          </div>
-        )}
+        {buy && (<div className="fixed top-18 right-0 h-[90vh] w-[50%] bg-white shadow-2xl p-5">
+          <h2 className="text-2xl font-bold"> {selectedProduct?.name} </h2>
+          <img src={selectedProduct?.image} className="w-full h-60 object-contain" />
+          <h3 className="text-xl mt-3"> ${selectedProduct?.price}
+          </h3> <button onClick={() => setbuy(false)} className="mt-4 bg-red-500 text-white px-4 py-2">Close</button>
+        </div>)}
       </div>
-
+          <Footer/>
     </div>
   )
 }
