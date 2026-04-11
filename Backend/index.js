@@ -21,6 +21,7 @@ exp.get("/", (req, res) => {
 
 exp.get("/product",async (req , res)=>{
     const product = await Product.find();
+    console.log(product);
     res.json(product);
 })
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios"
 import Footer from '../Home/Footer';
 
@@ -16,6 +16,8 @@ function Products() {
   const [mainImg, setMainImg] = useState({});
   const [buy, setbuy] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [id , setid] = useState(0)
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,6 +25,7 @@ function Products() {
         const res = await axios.get("https://amaxvision.onrender.com/product");
 
         let data = Array.isArray(res.data) ? res.data : [];
+        console.log(data);
 
         if (gender) {
           data = data.filter(
@@ -71,9 +74,11 @@ function Products() {
     }))
   }
 
-  function selected(product) {
+  function selected(id ,product) {
     setSelectedProduct(product)
-  }
+    setid(id)
+    console.log(id)
+  ,[selectedProduct,id]}
 
   if (loading) return <h1>Loading...</h1>;
   if (!prod.length) return <h1>No products found</h1>;
@@ -167,7 +172,7 @@ function Products() {
                   <div className='h-full w-[25%]  font-medium flex items-center flex-col justify-between mt-1'>
                     <h2 className='capitalize text-[15px]'><i className="ri-poker-hearts-line  text-amber-300  text-2xl"></i> </h2>
                     <h2 onClick={() => {
-                      setbuy(!buy), selected(item)
+                      setbuy(!buy), selected(item._id , item) 
                     }} className='capitalize text-[15px] cursor-pointer'>buy now <i className="ri-arrow-right-fill text-xl "></i></h2>
                   </div>
                 </div>
@@ -175,11 +180,22 @@ function Products() {
             )
           })}
         </div>
-        {buy && (<div className="fixed top-18 right-0 h-[90vh] w-[50%] bg-white shadow-2xl p-5">
-          <h2 className="text-2xl font-bold"> {selectedProduct?.name} </h2>
-          <img src={selectedProduct?.image} className="w-full h-60 object-contain" />
-          <h3 className="text-xl mt-3"> ${selectedProduct?.price}
-          </h3> <button onClick={() => setbuy(false)} className="mt-4 bg-red-500 text-white px-4 py-2">Close</button>
+        {buy && (<div className="fixed top-0 right-0 h-screen w-[50%] flex items-start justify-center flex-col bg-white shadow-2xl p-3 z-40 space-y-9">
+          <div className='flex items-center justify-evenly w-full '>
+             <img src={selectedProduct?.image} className="w-auto h-60 object-contain border-2 border-gray-600 p-2" />
+            <h2 className="text-2xl font-bold w-auto"> {selectedProduct?.name} </h2>
+          </div>
+         <div className='flex items-center justify-evenly w-full'>
+           <h3 className="text-xl mt-3"><span className='text-xl font-bold'>Price:</span> ${selectedProduct?.price}
+          </h3> 
+          <h3 className="text-xl mt-3"><span className='text-xl font-bold'>Material:</span> {selectedProduct?.material}
+          </h3> 
+          <h3 className="text-xl mt-3"><span className='text-xl font-bold'>Size:</span> {selectedProduct?.size}
+          </h3>
+         </div>
+         <button onClick={() => setbuy(false)} className="mt-4 bg-red-500 text-white px-4 py-2 ">Close</button>
+         <button  className="mt-4 bg-red-500 text-white px-4 py-2 " onClick={() => navigate("/Signup", { state: {productid:id} })}>Continue process</button>
+         <div ></div>
         </div>)}
       </div>
           <Footer/>
