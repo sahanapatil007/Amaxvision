@@ -22,7 +22,7 @@ function Products() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("https://amaxvision.onrender.com/product");
+        const res = await axios.get("https://amaxvision-production.up.railway.app/product");
 
         let data = Array.isArray(res.data) ? res.data : [];
         console.log(data);
@@ -171,32 +171,13 @@ function Products() {
                   </div>
                   <div className='h-full w-[25%]  font-medium flex items-center flex-col justify-between mt-1'>
                     <h2 className='capitalize text-[15px]'><i className="ri-poker-hearts-line  text-amber-300  text-2xl"></i> </h2>
-                    <h2 onClick={() => {
-                      setbuy(!buy), selected(item._id , item) 
-                    }} className='capitalize text-[15px] cursor-pointer'>buy now <i className="ri-arrow-right-fill text-xl "></i></h2>
+                    <h2 onClick={() => navigate(`/Productdetail/${item._id} `)} className='capitalize text-[15px] cursor-pointer'>buy now <i className="ri-arrow-right-fill text-xl "></i></h2>
                   </div>
                 </div>
               </div>
             )
           })}
         </div>
-        {buy && (<div className="fixed top-0 right-0 h-screen w-[50%] flex items-start justify-center flex-col bg-white shadow-2xl p-3 z-40 space-y-9">
-          <div className='flex items-center justify-evenly w-full '>
-             <img src={selectedProduct?.image} className="w-auto h-60 object-contain border-2 border-gray-600 p-2" />
-            <h2 className="text-2xl font-bold w-auto"> {selectedProduct?.name} </h2>
-          </div>
-         <div className='flex items-center justify-evenly w-full'>
-           <h3 className="text-xl mt-3"><span className='text-xl font-bold'>Price:</span> ${selectedProduct?.price}
-          </h3> 
-          <h3 className="text-xl mt-3"><span className='text-xl font-bold'>Material:</span> {selectedProduct?.material}
-          </h3> 
-          <h3 className="text-xl mt-3"><span className='text-xl font-bold'>Size:</span> {selectedProduct?.size}
-          </h3>
-         </div>
-         <button onClick={() => setbuy(false)} className="mt-4 bg-red-500 text-white px-4 py-2 ">Close</button>
-         <button  className="mt-4 bg-red-500 text-white px-4 py-2 " onClick={() => navigate("/Signup", { state: {productid:id} })}>Continue process</button>
-         <div ></div>
-        </div>)}
       </div>
           <Footer/>
     </div>

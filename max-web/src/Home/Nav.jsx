@@ -28,7 +28,7 @@ function Nav() {
               <div className='w-[40%] h-[80%]  flex items-center justify-center'>
                 <ul className='flex flex-col  '>
                   <li className='p-2 hover:bg-gray-200 cursor-pointer' onClick={() => navigate("/Product", { state: { gender: "men", material: 'Acetate' } })}> Spectacles</li>
-                  <li className='p-2 hover:bg-gray-200 cursor-pointer' onClick={() => navigate("/Product", { state: { gender: "women", material: 'Acetate' } })}>Computer Glass</li>
+                  <li className='p-2 hover:bg-gray-200 cursor-pointer' onClick={() => navigate("/Product", { state: { gender: "men", material: 'Acetate' } })}>Computer Glass</li>
                   <li className='p-2 hover:bg-gray-200 cursor-pointer'>Lens</li>
                   <li className='p-2 hover:bg-gray-200 cursor-pointer'>Accessories</li>
                 </ul>
@@ -44,7 +44,7 @@ function Nav() {
               </div>
               <div className='w-[40%] h-[80%]  flex items-center justify-center'>
                 <ul className='flex flex-col  '>
-                  <li className='p-2 hover:bg-gray-200 cursor-pointer' onClick={() => navigate("/Product", { state: { gender: "men", material: 'Acetate' } })}> Spectacles</li>
+                  <li className='p-2 hover:bg-gray-200 cursor-pointer' onClick={() => navigate("/Product", { state: { gender: "women", material: 'Acetate' } })}> Spectacles</li>
                   <li className='p-2 hover:bg-gray-200 cursor-pointer' onClick={() => navigate("/Product", { state: { gender: "women", material: 'Acetate' } })}>Computer Glass</li>
                   <li className='p-2 hover:bg-gray-200 cursor-pointer'>Lens</li>
                   <li className='p-2 hover:bg-gray-200 cursor-pointer'>Accessories</li>
